@@ -47,9 +47,9 @@ class WeatherInfo {
   factory WeatherInfo.fromJson(String id, Map<String, dynamic> json) {
     return switch(json) {
       {
-      "temperature": String temperature,
+      "temperature": String description,
       "wind": String wind,
-      "description": String description
+      "description": String temperature
       } =>
           WeatherInfo(
             id: id,
@@ -67,7 +67,7 @@ class WeatherInfo {
     return {
       'id': id,
       'temperature': temperature,
-      'wind': wind,
+      'wind': temperature,
       'description': description
     };
   }
